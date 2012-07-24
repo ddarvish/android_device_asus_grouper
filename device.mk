@@ -28,7 +28,7 @@ DEVICE_PACKAGE_OVERLAYS := \
 
 PRODUCT_PROPERTY_OVERRIDES := \
     wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=15 \
+    wifi.supplicant_scan_interval=180 \
     tf.enable=y \
     drm.service.enabled=true \
     ro.carrier=wifi-only
@@ -138,9 +138,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
 
 # NFCEE access control
-ifeq ($(TARGET_BUILD_VARIANT),user)
-    NFCEE_ACCESS_PATH := device/asus/grouper/nfcee_access.xml
-endif
+NFCEE_ACCESS_PATH := device/asus/grouper/nfcee_access.xml
+
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
