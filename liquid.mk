@@ -19,14 +19,30 @@
 # product configuration (apps).
 #
 
-# Inherit from those products. Most specific first.
+# tablet
 $(call inherit-product, device/asus/grouper/device.mk)
-# This is where we'd set a backup provider if we had one
-#$(call inherit-product, device/sample/products/backup_overlay.mk)
+
+# inherit
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
-# Discard inherited values and use our own instead.
-PRODUCT_NAME := liquid_grouper
+# products
 PRODUCT_DEVICE := grouper
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := Full Liquid on Grouper
+PRODUCT_BRAND := google
+PRODUCT_NAME := liquid_grouper
+PRODUCT_MODEL := Google Nexus 7
+PRODUCT_MANUFACTURER := asus
+PRODUCT_PROPERTY_OVERRIDES += ro.buildzipid=liquid.grouper.$(shell date +%m%d%y).$(shell date +%H%M%S)
+
+# overrides
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_NUMBER=392829 \
+    PRODUCT_NAME=nakasi \
+    TARGET_BUILD_TYPE=user \
+    BUILD_VERSION_TAGS=release-keys \
+    PRIVATE_BUILD_DESC="nakasi-user 4.1 JRN84D 392829 release-keys" \
+    BUILD_FINGERPRINT="google/nakasi/grouper:4.1/JRN84D/392829:user/release-keys"
+
+# media
+PRODUCT_COPY_FILES += \
+    vendor/liquid/prebuilt/common/media/xhdpi/bootanimation.zip:system/media/bootanimation.zip
+
