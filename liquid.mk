@@ -33,6 +33,7 @@ PRODUCT_NAME := liquid_grouper
 PRODUCT_MODEL := Google Nexus 7
 PRODUCT_MANUFACTURER := asus
 PRODUCT_PROPERTY_OVERRIDES += ro.buildzipid=liquid.grouper.$(shell date +%m%d%y).$(shell date +%H%M%S)
+PRODUCT_LOCALES := en_US en_GB fr_FR it_IT de_DE es_ES cs_CZ zh_TW zh_CN ru_RU ko_KR pl_PL
 
 # overrides
 PRODUCT_BUILD_PROP_OVERRIDES += \
