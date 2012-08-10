@@ -21,7 +21,7 @@
 
 # tablet
 $(call inherit-product, device/asus/grouper/device.mk)
-$(call inherit-product, vendor/liquid/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/liquid/config/common_tablet.mk)
 
 # inherit
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
