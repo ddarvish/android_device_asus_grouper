@@ -3,14 +3,14 @@ windowsmgr.max_events_per_sec=275
 # system.prop for grouper
 #
 
-ro.opengles.version = 131072
+ro.opengles.version=131072
 wifi.interface=wlan0
 rild.libpath=/system/lib/libril-icera.so
 rild.libargs=-e wwan0
-persist.tegra.nvmmlite = 1
+persist.tegra.nvmmlite=1
 ro.audio.monitorOrientation=true
 
-# NFC
+# nfc
 debug.nfc.fw_download=false
 debug.nfc.se=false
 
