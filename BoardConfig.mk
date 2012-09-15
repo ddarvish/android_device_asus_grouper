@@ -97,4 +97,3 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/asus/grouper
 
 TARGET_KERNEL_SOURCE := kernel/asus/grouper
 TARGET_KERNEL_CONFIG := cyanogenmod_grouper_defconfig
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-4.7.2
