@@ -1,11 +1,12 @@
 #
-# Copyright (C) 2010 The Android Open Source Project
+# Copyright (C) 2012 The CyanogenMod Project
+# Copyright (C) 2012 The LiquidSmooth Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+# http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -21,24 +22,17 @@ DEVICE_PACKAGE_OVERLAYS := \
     device/asus/grouper/overlay
 
 PRODUCT_PROPERTY_OVERRIDES := \
-    wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=15 \
     tf.enable=y \
-    drm.service.enabled=true \
-    ro.carrier=wifi-only
-
-# Set default USB interface
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp
-
-include frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk
+    ro.carrier=wifi-only \
+    wifi.interface=wlan0 \
+    persist.sys.usb.config=mtp \
+    wifi.supplicant_scan_interval=180
 
 PRODUCT_COPY_FILES += \
     device/asus/grouper/init.grouper.rc:root/init.grouper.rc \
     device/asus/grouper/fstab.grouper:root/fstab.grouper \
     device/asus/grouper/ueventd.grouper.rc:root/ueventd.grouper.rc \
-    device/asus/grouper/init.grouper.usb.rc:root/init.grouper.usb.rc \
-    device/asus/grouper/gps.conf:system/etc/gps.conf
+    device/asus/grouper/init.grouper.usb.rc:root/init.grouper.usb.rc
 
 ifneq ($(TARGET_PREBUILT_WIFI_MODULE),)
 PRODUCT_COPY_FILES += \
@@ -87,12 +81,6 @@ PRODUCT_PACKAGES := \
     bttest \
     com.android.future.usb.accessory \
     whisperd
-
-# for bugmailer
-PRODUCT_PACKAGES += send_bug
-PRODUCT_COPY_FILES += \
-    system/extras/bugmailer/bugmailer.sh:system/bin/bugmailer.sh \
-    system/extras/bugmailer/send_bug:system/bin/send_bug
 
 # NFC packages
 PRODUCT_PACKAGES += \
