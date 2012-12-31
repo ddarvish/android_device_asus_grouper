@@ -1,3 +1,8 @@
+windowsmgr.max_events_per_sec=275
+#
+# system.prop for grouper
+#
+## cannot take spaces
 ro.opengles.version = 131072
 wifi.interface=wlan0
 rild.libpath=/system/lib/libril-icera.so
@@ -11,3 +16,11 @@ debug.nfc.se=false
 
 # set default lcd density to TVDPI
 ro.sf.lcd_density=213
+
+# Dalvik VM Heapsize
+dalvik.vm.heapsize=256m
+dalvik.vm.heapmaxfree=8m
+dalvik.vm.heapminfree=512k
+dalvik.vm.heapstartsize=16m
+dalvik.vm.heapgrowthlimit=128m
+dalvik.vm.heaputilization=0.75
