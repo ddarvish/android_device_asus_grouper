@@ -1,5 +1,6 @@
 #
-# Copyright (C) 2010 The Android Open Source Project
+# Copyright (C) 2012 The CyanogenMod Project
+# Copyright (C) 2012 The LiquidSmooth Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,9 +15,6 @@
 # limitations under the License.
 #
 
-PRODUCT_PROPERTY_OVERRIDES := \
-    ro.carrier=wifi-only
-
 PRODUCT_COPY_FILES := \
     device/asus/grouper/init.grouper.rc:root/init.grouper.rc
 
@@ -26,8 +24,9 @@ $(call inherit-product, device/asus/grouper/device-common.mk)
 # inherit from the non-open-source side, if present
 $(call inherit-product-if-exists, vendor/asus/grouper/device-vendor.mk)
 
+# Required For Boot DO NOT DELETE!
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.carrier=wifi-only
+    dalvik.vm.dexopt-data-only=1
 
 DEVICE_PACKAGE_OVERLAYS := \
     device/asus/grouper/overlay

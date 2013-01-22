@@ -1,5 +1,6 @@
 #
-# Copyright (C) 2010 The Android Open Source Project
+# Copyright (C) 2012 The CyanogenMod Project
+# Copyright (C) 2012 The LiquidSmooth Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,14 +18,13 @@
 PRODUCT_AAPT_CONFIG := normal large tvdpi hdpi
 PRODUCT_AAPT_PREF_CONFIG := tvdpi
 
-
 PRODUCT_PROPERTY_OVERRIDES := \
-    wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=180 \
     tf.enable=y \
-    drm.service.enabled=true
+    ro.carrier=wifi-only \
+    wifi.interface=wlan0 \
+    drm.service.enabled=true \
+    wifi.supplicant_scan_interval=180
 
-# Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
@@ -52,7 +52,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml
 
-
 PRODUCT_COPY_FILES += \
     device/asus/grouper/vold.fstab:system/etc/vold.fstab \
     device/asus/grouper/elan-touchscreen.idc:system/usr/idc/elan-touchscreen.idc \
@@ -73,12 +72,6 @@ PRODUCT_PACKAGES := \
     bttest \
     com.android.future.usb.accessory
 
-# for bugmailer
-PRODUCT_PACKAGES += send_bug
-PRODUCT_COPY_FILES += \
-    system/extras/bugmailer/bugmailer.sh:system/bin/bugmailer.sh \
-    system/extras/bugmailer/send_bug:system/bin/send_bug
-
 # NFC packages
 PRODUCT_PACKAGES += \
     nfc.grouper \
@@ -90,7 +83,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_CHARACTERISTICS := tablet,nosdcard
 
-# we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 # media config xml file
