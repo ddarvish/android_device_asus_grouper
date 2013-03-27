@@ -20,7 +20,7 @@ ro.sf.lcd_density=213
 # Fields For VM Heapsize
 dalvik.vm.heapsize=256m
 dalvik.vm.heapmaxfree=8m
-dalvik.vm.heapminfree=512k
+dalvik.vm.heapminfree=2m
 dalvik.vm.heapstartsize=16m
 dalvik.vm.heapgrowthlimit=128m
 dalvik.vm.heaputilization=0.75
