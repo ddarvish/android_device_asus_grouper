@@ -24,3 +24,5 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/asus/grouper
 -include vendor/asus/grouper/BoardConfigVendor.mk
 
 include device/asus/grouper/BoardConfigCommon.mk
+
+TARGET_OTA_ASSERT_DEVICE := grouper
